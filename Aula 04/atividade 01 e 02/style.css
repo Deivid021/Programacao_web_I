@@ -1,0 +1,52 @@
+    body {
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        
+    }
+    
+    form {
+        background: #fff;
+        padding: 20px 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 50px rgba(0,0,0,0.1);   
+        width: 350px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .button {
+        width: 190px;
+        /* background-color: black; */
+        border-radius: 5px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .radio-group {
+        text-align: center;
+    }
+
+    .cor {
+        border-radius: 5px;
+    }
+
+    .uf {
+        text-align: center;
+        border-radius: 5px;
+        font-family: 'Courier New', Courier, monospace;
+    }

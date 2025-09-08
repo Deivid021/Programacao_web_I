@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 01</title>
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 02</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="" method="">
+        <div class="form">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" maxlength="100">
+
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text" name="sobrenome" id="sobrenome" maxlength="100">
+
+            <label for="email:">Email:</label>
+            <input type="email" name="email" id="email">
+
+            <label for="datanasc">Data de Nascimento:</label>
+            <input type="date" name="datanasc" id="datanasc" datemin="01/01/1920" datemax="01/01/2024">
+
+            <label for="sexo">Sexo:</label>
+                <div class="radio-group">
+                    <input type="radio" name="sexo" id="masc" value="masc">
+                    <label for="masc">Masculino</label>
+                    <input type="radio" name="sexo" id="fem" value="fem">
+                    <label for="fem">Feminino</label>
+                </div>
+
+            <label for="end">Endereço:</label>
+            <input type="text" name="end" id="end" maxlength="200">
+
+            <label for="cep">CEP:</label>
+            <input type="text" name="cep" id="cep" maxlength="10">
+
+            <label for="cor">Cor Favorita:</label>
+            <input type="color" class="cor" name="cor" id="cor">
+
+            <label for="uf">Estado (UF):</label>
+            <select name="uf" id="uf" class="uf">
+                <option value="ac">Acre (AC)</option>
+                <option value="al">Alagoas (AL)</option>
+                <option value="ap">Amapá (AP)</option>
+                <option value="am">Amazonas (AM)</option>
+                <option value="ba">Bahia (BA)</option>
+                <option value="ce">Ceará (CE)</option>
+                <option value="df">Distrito Federal (DF)</option>
+                <option value="es">Espírito Santo (ES)</option>
+                <option value="go">Goiás (GO)</option>
+                <option value="ma">Maranhão (MA)</option>
+                <option value="mt">Mato Grosso (MT)</option>
+                <option value="ms">Mato Grosso do Sul (MS)</option>
+                <option value="mg">Minas Gerais (MG)</option>
+                <option value="pa">Pará (PA)</option>
+                <option value="pb">Paraíba (PB)</option>
+                <option value="pr">Paraná (PR)</option>
+                <option value="pe">Pernambuco (PE)</option>
+                <option value="pi">Piauí (PI)</option>
+                <option value="rj">Rio de Janeiro (RJ)</option>
+                <option value="rn">Rio Grande do Norte (RN)</option>
+                <option value="rs">Rio Grande do Sul (RS)</option>
+                <option value="ro">Rondônia (RO)</option>
+                <option value="rr">Roraima (RR)</option>
+                <option value="sc">Santa Catarina (SC)</option>
+                <option value="sp">São Paulo (SP)</option>
+                <option value="se">Sergipe (SE)</option>
+                <option value="to">Tocantins (TO)</option>
+            </select>
+
+            <div class="buttons">
+                <input type="submit" class="button" value="Enviar">
+                <input type="reset" class="button" value="Limpar">
+            </div>
+        </div>
+    </form>
+</body>
+</html>

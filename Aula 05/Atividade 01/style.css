@@ -1,0 +1,12 @@
+    .result-negative {
+        background-color: red;
+    }
+
+    .result-positive {
+        background-color: green;
+    }
+
+    .result-zero {
+        background-color: gray;
+    }
+
