@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title> 
+    <script src="script.js" defer></script>
 
     <style>
         td {
@@ -12,13 +13,14 @@
 
 </head>
 <body>
-    <table align="center" border="5" cellspacing="3px">
+    <table align="center" border="5" cellspacing="3px" id="boletim">
             <thead bgcolor="gray">
                 <tr>
                     <td rowspan="2">Aluno</td>
                     <td colspan="3">Semestre 01</td>
                     <td colspan="3">Semestre 02</td>
                     <td colspan="3">Semestre 03</td>
+                    <td rowspan="2">Botao</td>
                 </tr>
                 <tr>
                     <td>Nota 01</td>
@@ -34,75 +36,88 @@
             </thead>
             <tbody>
                 <td>Bernardo</td>
-                <td>10</td>
-                <td>7</td>
-                <td>3</td>
-                <td>8</td>
-                <td>4</td>
-                <td>7</td>
-                <td>3</td>
-                <td>8</td>
-                <td>5</td>
+                <td class="column01">10</td>
+                <td class="column02">7</td>
+                <td class="column03">3</td>
+                <td class="column04">8</td>
+                <td class="column05">4</td>
+                <td class="column06">7</td>
+                <td class="column07">3</td>
+                <td class="column09">8</td>
+                <td class="column10">5</td>
             </tbody>
             <tbody>
                 <td>Deivid</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td class="column-01">8</td>
+                <td class="column-02">7</td>
+                <td class="column-03">3</td>
+                <td class="column-04">8</td>
+                <td class="column-05">4</td>
+                <td class="column-06">7</td>
+                <td class="column-07">3</td>
+                <td class="column-09">8</td>
+                <td class="column-10">5</td>
             </tbody>
             <tbody>
                 <td>Tadeu</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td class="column01">5</td>
+                <td class="column02">7</td>
+                <td class="column03">3</td>
+                <td class="column04">8</td>
+                <td class="column05">4</td>
+                <td class="column06">7</td>
+                <td class="column07">3</td>
+                <td class="column09">8</td>
+                <td class="column10">5</td>
             </tbody>
             <tbody>
                 <td>João</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td class="column01">7.7</td>
+                <td class="column02">7</td>
+                <td class="column03">3</td>
+                <td class="column04">8</td>
+                <td class="column05">4</td>
+                <td class="column06">7</td>
+                <td class="column07">3</td>
+                <td class="column09">8</td>
+                <td class="column10">5</td>
             </tbody>
             <tbody>
                 <td>Pedro</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td class="column01">3</td>
+                <td class="column02">7</td>
+                <td class="column03">3</td>
+                <td class="column04">8</td>
+                <td class="column05">4</td>
+                <td class="column06">7</td>
+                <td class="column07">3</td>
+                <td class="column09">8</td>
+                <td class="column10">5</td>
             </tbody>
             <tbody>
                 <td>Douglas</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td class="column01">10</td>
+                <td class="column02">7</td>
+                <td class="column03">3</td>
+                <td class="column04">8</td>
+                <td class="column05">4</td>
+                <td class="column06">7</td>
+                <td class="column07">3</td>
+                <td class="column09">8</td>
+                <td class="column10">5</td>
+            </tbody>
+            <tbody>
+                <td><b>Média</b></td>
+                <td class="columnTotal01"></td>
+                <td class="columnTotal02"></td>
+                <td class="columnTotal03"></td>
+                <td class="columnTotal04"></td>
+                <td class="columnTotal05"></td>
+                <td class="columnTotal06"></td>
+                <td class="columnTotal07"></td>
+                <td class="columnTotal09"></td>
+                <td class="columnTotal10"></td>
+                <td class="totalizador"><button>Totalizador</button></td>
             </tbody>
     </table>
 </body>
