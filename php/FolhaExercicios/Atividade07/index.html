@@ -3,66 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade 04</title>
+    <title>Atividade 07</title>
 </head>
 <body>
     <form action="acao.php" method="post">
-        <table border="1" cellpadding="5">
-            <thead>
-                <tr>
-                    <td>Frutas</td>
-                    <td>Preço por Kg</td>
-                    <td>Quantidade</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Maçã</td>
-                    <td><input type="number" name="preco[maca]" required></td>
-                    <td><input type="number" name="qnt[maca]" required></td>
-                </tr>
-                <tr>
-                    <td>Melancia</td>
-                    <td><input type="number" name="preco[melancia]" required></td>
-                    <td><input type="number" name="qnt[melancia]" required></td>
-                </tr>
-                <tr>
-                    <td>Laranja</td>
-                    <td><input type="number" name="preco[laranja]" required></td>
-                    <td><input type="number" name="qnt[laranja]" required></td>
-                </tr>
-                <tr>
-                    <td>Repolho</td>
-                    <td><input type="number" name="preco[repolho]" required></td>
-                    <td><input type="number" name="qnt[repolho]" required></td>
-                </tr>
-                <tr>
-                    <td>Cenoura</td>
-                    <td><input type="number" name="preco[cenoura]" required></td>
-                    <td><input type="number" name="qnt[cenoura]" required></td>
-                </tr>
-                <tr>
-                    <td>Batatinha</td>
-                    <td><input type="number" name="preco[batatinha]" required></td>
-                    <td><input type="number" name="qnt[batatinha]" required></td>
-                </tr>
-            </tbody>
-        </table>
-        <br>
+        <p>Valor do carro a vísta:</p>
+        <input type="number" name="vista" id="vista">
+        <p>Quantidade de parcelas:</p>
+        <input type="number" name="parcela" id="parcela">
+        <p>Valor das parcelas:</p>
+        <input type="number" name="valorparcela" id="valorparcela">
+        <br><br>
         <input type="submit" value="Send">
     </form>
 </body>
 </html>
-
-
-<!-- Joãozinho recebeu R$ 50,00 reais de seu pai para ir à feira comprar frutas e verduras.
-Ele comprou maçã, melancia, laranja, repolho, cenoura, batatinha.
-Crie um programa que calcule o valor gasto com cada produto comprado, sendo o
-resultado do valor individual do produto em Kg multiplicado pela quantidade em Kg
-comprada por Joãozinho.
-Ao final escrever uma frase com o valor da compra, e uma previsão se o dinheiro será
-o suficiente para pagar a conta, caso falte dinheiro escrever uma frase em vermelho
-com o valor que ficou acima do disponível por Joãozinho, e não, escrever uma fase em
-azul e o valor que Joãozinho ainda poderia gastar.
-Caso o valor da compra seja exatamente igual ao R$ 50,00 disponível, escreva uma
-frase em verde afirmando que o saldo para compras foi esgotado. -->

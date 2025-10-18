@@ -1,41 +1,16 @@
 <?php
 
-$total = 0;
-$saldo = 50;
+    $valorAvista = $_POST['vista'];
+    $qtdParcela = $_POST['parcela'];
+    $valorParcela = $_POST['valorparcela'];
 
-    function calculaCompras($total, $saldo) {
-        foreach ($_POST['preco'] as $produtos => $preco) {
-            $qnt = $_POST['qnt'][$produtos];
-            $total += $preco * $qnt;
+    function calculaJuros($valorAvista, $qtdParcela, $valorParcela) {
+            $juros = ($valorParcela * $qtdParcela) - $valorAvista;
+            if($juros < 0) {
+                return "Valor do parcelamento menor do que o preço a vísta";
+            }
+            return "Valor que será pago a mais devido o parcelamento é de: R$ " . number_format($juros, 2, ',', '.');
         }
 
-        if($total > $saldo) {
-            $falta = $total - $saldo;
-            echo "<p style='color:red;'>Valor total acima do saldo de João, faltou " . $falta . "</p>";
-        }
-        else if($total < $saldo) {
-            $sobra = $saldo - $total;
-            echo "<p style='color:blue;'>Valor total abaixo do saldo de João, sobrou " . $sobra . "</p>";
-        }
-        else {
-            echo "<p style='color:green;'>Saldo de compras foi esgotado! </p>";
-        }
-    }
-
-    echo "Total: " . $total ." Saldo: ". $saldo;
-    echo "<br>";
-    echo $compras = calculaCompras($total, $saldo);
+    echo $init = calculaJuros($valorAvista, $qtdParcela, $valorParcela);
 ?>
-
-
-<!-- Joãozinho recebeu R$ 50,00 reais de seu pai para ir à feira comprar frutas e verduras.
-Ele comprou maçã, melancia, laranja, repolho, cenoura, batatinha.
-Crie um programa que calcule o valor gasto com cada produto comprado, sendo o
-resultado do valor individual do produto em Kg multiplicado pela quantidade em Kg
-comprada por Joãozinho.
-Ao final escrever uma frase com o valor da compra, e uma previsão se o dinheiro será
-o suficiente para pagar a conta, caso falte dinheiro escrever uma frase em vermelho
-com o valor que ficou acima do disponível por Joãozinho, e não, escrever uma fase em
-azul e o valor que Joãozinho ainda poderia gastar.
-Caso o valor da compra seja exatamente igual ao R$ 50,00 disponível, escreva uma
-frase em verde afirmando que o saldo para compras foi esgotado. -->
