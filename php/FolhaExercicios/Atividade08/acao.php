@@ -6,16 +6,39 @@
     function calculaJurosSimples($valorAvista, $qtdParcela) {
         switch ($qtdParcela) {
             case '24':
-                return ($valorAvista * 0.015) + $valorAvista;
+                $juros = $valorAvista * 0.015 * $qtdParcela;
+                return ($valorAvista + $juros) / $qtdParcela;
+                break;
+
+            case '36':
+                $juros = $valorAvista * 0.020 * $qtdParcela;
+                return ($valorAvista + $juros) / $qtdParcela;
+                break;
+                
+            case '48':
+                $juros = $valorAvista * 0.025 * $qtdParcela;
+                return ($valorAvista + $juros) / $qtdParcela;
+                break;
+
+            case '60':
+                $juros = $valorAvista * 0.030 * $qtdParcela;
+                return ($valorAvista + $juros) / $qtdParcela;
                 break;
             
             default:
-                return 'teste';
+                return 'Parcela Invalida';
                 break;
         }
     }
 
-    echo $init = calculaJurosSimples($valorAvista, $qtdParcela);
+    $parcela = calculaJurosSimples($valorAvista, $qtdParcela);
+    echo "Valor da Parcela: R$ " . number_format($parcela, 2, ',', '.');
+    echo "<br>";  
+    echo "Quantidade de Parcelas: " . $qtdParcela . " Vezes";  
+    echo "<br>";  
+    echo "Valor Total Parcelado: R$ " . number_format(($parcela * $qtdParcela), 2, ',', '.');  
+    echo "<br>";  
+    echo "Valor a Vísta: R$ " . number_format($valorAvista, 2, ',', '.');  
 ?>
 
 <!-- Paulinho foi comprar uma moto nova. A empresa vende motos muito baratas pois
