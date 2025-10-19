@@ -6,11 +6,11 @@
         )
     );
 
-    function exibeArvore($array, $nivel = 0) {
+    function exibeArvore($array) {
         foreach ($array as $chave => $valor) {
             if (is_array($valor)) {
                 echo $chave. "<br>";
-                exibeArvore($valor, $nivel + 1);
+                exibeArvore($valor);
             } else {
                 echo "$valor<br>";
             }

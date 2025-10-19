@@ -9,6 +9,5 @@
         return "O valor não é divisível por 2";
     }
 
-    $inicia = validaDivisao($numero);
-    echo $inicia;
+    echo validaDivisao($numero);
 ?>
