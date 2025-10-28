@@ -11,13 +11,16 @@
             $_SESSION['pass'] = $pass;
             $_SESSION['inicio'] = date("d/m/y H:i:s");
             $_SESSION['inicio_timestamp'] = time();
+
+            setcookie("usuario", $user, time() + (60 * 5), "/");
+            setcookie("inicio", date("d/m/y H:i:s"), time() + (60 * 5), "/");
+
             header("Location: acao.php");
             exit;
         } else {    
             $erro = "Login ou Senha Incorretos!";
         }
     }
-
 ?>
 
 <!DOCTYPE html>

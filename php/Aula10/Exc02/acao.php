@@ -3,10 +3,14 @@
     session_start();
     date_default_timezone_set('America/Sao_Paulo');
 
-    if(!isset($_SESSION['user'])){
-        header("Location: index.php");
+    if(!isset($_COOKIE['usuario']) || !isset($_COOKIE['inicio'])){
+        echo "Os dados de Cookies foram perdidos!";
+        exit;
     }
 
+    $usuario = $_COOKIE['usuario'];
+    $inicio = $_COOKIE['inicio'];
+    
     $_SESSION['fim'] = date("d/m/y H:i:s");
     $tempo_sessao = time() - $_SESSION['inicio_timestamp'];
 ?>
