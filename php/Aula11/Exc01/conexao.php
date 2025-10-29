@@ -4,7 +4,7 @@ function conecta(){
     try {
         $dbconn = pg_connect("host=localhost port=5432 dbname=postgres user=postgres password=postgres");
         if($dbconn) {
-            echo "database connect";
+            // echo "database connect";
         
             $result = pg_query($dbconn, "SELECT COUNT(*) AS QTDTABS FROM PG_TABLES");
         
