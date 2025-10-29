@@ -13,6 +13,11 @@
     
     $_SESSION['fim'] = date("d/m/y H:i:s");
     $tempo_sessao = time() - $_SESSION['inicio_timestamp'];
+
+
+
+    
+echo "aqui";
 ?>
 
 <!DOCTYPE html>
