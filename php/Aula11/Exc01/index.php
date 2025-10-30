@@ -1,19 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pessoas</title>
+</head>
+<body>
+    <h1>Cadastro de Pessoas</h1>
+
+    <button onclick="window.location.href='?listar=1'">Listar</button>
+    <button onclick="window.location.href='inserePessoa.html'">Inserir</button>
+
 <?php
-require_once("conexao.php"); 
-$dbconn = pg_connect("host=localhost port=5432 dbname=postgres user=postgres password=postgres");
 
-conecta();
+    if (isset($_GET['listar'])) {
+        require_once("listaPessoa.php");
 
-$aDados = array($_POST['pesnome'],
-                $_POST['pessobrenome'],
-                $_POST['pesemail'],
-                $_POST['pespassword'],
-                $_POST['pescidade'],
-                $_POST['pesestado']);
+        $pessoas = listarPessoas();
 
-$result = pg_query_params($dbconn, "INSERT INTO TBPESSOA 
-                                    (PESNOME, PESSOBRENOME, PESEMAIL, PESPASSWORD, PESCIDADE, PESESTADO)
-                                    VALUES 
-                                    ($1, $2, $3, $4, $5, $6)",
-                                    $aDados);
+        echo "<h2>Lista de Pessoas</h2>";
+        echo "<table border='1'>";
+        echo "<tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Email</th>
+                <th>Senha</th>
+                <th>Cidade</th>
+                <th>Estado</th>
+                <th>Deletar</th>
+            </tr>";
 
+        foreach ($pessoas as $vPessoa) {
+            echo "<tr>";
+            echo "<td>{$vPessoa['pesnome']}</td>";
+            echo "<td>{$vPessoa['pessobrenome']}</td>";
+            echo "<td>{$vPessoa['pesemail']}</td>";
+            echo "<td>{$vPessoa['pespassword']}</td>";
+            echo "<td>{$vPessoa['pescidade']}</td>";
+            echo "<td>{$vPessoa['pesestado']}</td>";
+            echo "<td> <button onclick=\"window.location.href='?deleta={$vPessoa['pescodigo']}'\">Deletar</button> </td>";
+            echo "</tr>";
+        }
+
+        echo "</table>";    
+    }
+
+    if (isset($_GET['deleta'])) {
+        require_once("deletaPessoa.php");
+        $id = $_GET['deleta'];
+        deletarPessoa($id);
+        echo "<p>Pessoa deletada com sucesso!</p>";
+    }
+?>
+</body>
+</html>
