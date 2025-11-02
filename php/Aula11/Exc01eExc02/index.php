@@ -8,11 +8,13 @@
 <body>
     <h1>Cadastro de Pessoas</h1>
 
-    <button onclick="window.location.href='?listar=1'">Listar</button>
+    <form method="get">
+        <input type="text" name="search" id="search">
+        <button onclick="window.location.refresh();">Buscar</button>
+    </form>
+    <br>
     <button onclick="window.location.href='inserePessoa.html'">Inserir</button>
-
 <?php
-    if (isset($_GET['listar'])) {
         require_once("listaPessoa.php");
 
         $pessoas = listarPessoas();
@@ -41,14 +43,15 @@
             echo "</tr>";
         }
 
-        echo "</table>";    
-    }
+        echo "</table>";
 
     if (isset($_GET['deleta'])) {
         require_once("deletaPessoa.php");
         $id = $_GET['deleta'];
         deletarPessoa($id);
-        echo "<p>Pessoa deletada com sucesso!</p>";
+        header("Refresh: 0"); 
+        exit();
+        // echo "<p>Pessoa deletada com sucesso!</p>";
     }
 ?>
 </body>

@@ -8,7 +8,12 @@ function listarPessoas() {
         die("Erro ao conectar ao banco de dados.");
     }
 
-    $query = "SELECT pescodigo, pesnome, pessobrenome, pesemail, pespassword, pescidade, pesestado FROM TBPESSOA;";
+    if(isset($_GET['search'])) {
+        $filtroNome [] = $_GET['search'];
+        $query = "SELECT pescodigo, pesnome, pessobrenome, pesemail, pespassword, pescidade, pesestado FROM TBPESSOA WHERE pesnome ilike '%" . $filtroNome[0] . "%';";
+    } else {
+        $query = "SELECT pescodigo, pesnome, pessobrenome, pesemail, pespassword, pescidade, pesestado FROM TBPESSOA;";
+    }
     $result = pg_query($dbconn, $query);
 
     if (!$result) {
