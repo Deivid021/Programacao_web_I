@@ -12,7 +12,6 @@
     <button onclick="window.location.href='inserePessoa.html'">Inserir</button>
 
 <?php
-
     if (isset($_GET['listar'])) {
         require_once("listaPessoa.php");
 
