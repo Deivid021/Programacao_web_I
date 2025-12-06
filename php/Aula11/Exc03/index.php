@@ -1,34 +1,29 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $dados = [
-        'pesnome'       => $_POST['pesnome'],
-        'pessobrenome'  => $_POST['pessobrenome'],
-        'pesemail'      => $_POST['pesemail'],
-        'pespassword'   => $_POST['pespassword'],
-        'pescidade'     => $_POST['pescidade'],
-        'pesestado'     => $_POST['pesestado'],
-        'data_envio'    => date('Y-m-d H:i:s')
-    ];
+require_once "Pessoa.php";
+require_once "Endereco.php";
+require_once "Contato.php";
 
-    $arquivo = 'Aula11\Exc03\pessoas.json';
+$pai = new Pessoa("Carlos Alberto", "111.111.111-11", 45);
+$mae = new Pessoa("Maria Clara", "222.222.222-22", 43);
+$irmao = new Pessoa("João Pedro", "333.333.333-33", 18);
+$voce = new Pessoa("Deivid", "444.444.444-44", 19);
 
-    if (file_exists($arquivo)) {
-        $conteudo = file_get_contents($arquivo);
-        $lista = json_decode($conteudo, true);
-        if (!is_array($lista)) {
-            $lista = [];
-        }
-    } else {
-        $lista = [];
-    }
+$familia = [];
+$familia[] = $pai;
+$familia[] = $mae;
+$familia[] = $irmao;
+$familia[] = $voce;
 
-    $lista[] = $dados;
+$conteudo = "FAMÍLIA REGISTRADA\n\n";
 
-    file_put_contents($arquivo, json_encode($lista, JSON_PRETTY_PRINT));
-
-    echo "Pessoa salva com sucesso!";
-    echo "<br><a href='index.html'>Voltar</a>";
-} else {
-    echo "Nenhum dado recebido.";
+foreach ($familia as $pessoa) {
+    $conteudo .= "Nome: " . $pessoa->getNome() . "\n";
+    $conteudo .= "CPF: " . $pessoa->getCpf() . "\n";
+    $conteudo .= "Idade: " . $pessoa->getIdade() . "\n";
+    $conteudo .= "---------------------------\n";
 }
+
+file_put_contents("familia.txt", $conteudo);
+
+echo "Arquivo <strong>familia.txt</strong> salvo com sucesso!";
